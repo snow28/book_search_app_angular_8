@@ -1,0 +1,20 @@
+<main class="welcome-component-wrapper">
+  <form class="form">
+    <label for="username" [className]="labelActive ? 'active' : ''">Enter username to proceed</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      autocomplete="off"
+      [(ngModel)]="username"
+      (keyup)="keyup()"
+      (focus)="focusFunction()"
+      (focusout)="focusOutFunction()"
+      [className]="labelActive ? 'active' : ''"
+    >
+    <span class="errors" *ngIf="error">
+      <p>Insert correct username before you can proceed!</p>
+    </span>
+    <input type="submit" value="Proceed" (click)="submit()" id="submit" class="hang">
+  </form>
+</main>

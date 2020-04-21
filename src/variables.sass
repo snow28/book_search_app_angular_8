@@ -1,0 +1,40 @@
+$white: white
+$black: black
+$text-black: rgba(0,0,0,.65)
+$light-gray: rgb(240, 240, 240)
+$light-red: #ff8989
+
+$mobile_breakpoint: 1150px
+
+
+
+.mobile-only
+  @media (min-width: $mobile_breakpoint)
+    display: none !important
+
+
+@keyframes hang
+  50%
+    transform: translateY(2px)
+
+  100%
+    transform: translateY(4px)
+
+.hang
+  display: inline-block
+  transition-duration: 0.5s
+  transition-property: transform
+  -webkit-tap-highlight-color: transparent
+  transform: translateZ(0)
+  box-shadow: 0 0 1px transparent
+
+.hang:hover
+  transform: translateY(3px)
+  animation-name: hang
+  animation-duration: 1.5s
+  animation-delay: 0.3s
+  animation-timing-function: linear
+  animation-iteration-count: infinite
+  animation-direction: alternate
+
+

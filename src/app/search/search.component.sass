@@ -1,0 +1,126 @@
+@import "../../variables"
+
+.search-page-wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding-top: 40px
+  padding-bottom: 50px
+  .searchBox
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border-bottom: 2px solid $light-gray
+    padding-bottom: 40px
+    form
+      display: flex
+      flex-direction: column
+      align-items: center
+      position: relative
+      width: 500px
+      max-width: 90vw
+      .errors
+        width: 100%
+        padding: 5px 10px
+        background-color: $light-red
+        border-bottom-left-radius: 4px
+        border-bottom-right-radius: 4px
+        overflow: hidden
+        p
+          letter-spacing: 1px
+          font-size: 12px
+          font-weight: 600
+      label
+        position: absolute
+        font-weight: 500
+        font-size: 15px
+        letter-spacing: 1px
+        top: 30px
+        left: 10px
+        transition-duration: 0.4s
+        pointer-events: none
+        color: $text-black
+        &.active
+          top: 8px
+          font-size: 11px
+      input#searchValue
+        border: none
+        width: 100%
+        border-bottom: 1px solid #bababa
+        height: 40px
+        margin-top: 20px
+        padding: 0px 10px
+        font-family: Roboto, sans-serif
+        font-size: 20px
+        transition-duration: 0.25s
+        cursor: pointer
+        &.active
+          border-color: $text-black
+      input#search
+        cursor: pointer
+        border: none
+        padding: 15px 30px
+        margin-top: 15px
+        letter-spacing: 1px
+        font-size: 20px
+        transition-duration: 0.2s
+        background-color: $light-gray
+        &:active
+          transform: scale(1.05)
+  .result-list
+    padding-top: 40px
+    .totalItems
+      width: 100%
+      text-align: center
+      margin-bottom: 50px
+  .pagination
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    .item
+      margin: 0 10px
+      &.previous,&.next
+        cursor: pointer
+      img
+        width: 30px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

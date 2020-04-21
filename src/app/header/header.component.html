@@ -1,0 +1,41 @@
+<header>
+  <div class="logo-wrapper">
+    <a routerLink="/" *ngIf="router.url === '/'">
+      <img src="/assets/icons/google-logo.svg">
+      <p>Books API Search</p>
+    </a>
+    <a routerLink="/search" *ngIf="router.url !== '/'">
+      <img src="/assets/icons/google-logo.svg">
+      <p>Books API Search</p>
+    </a>
+  </div>
+  <div class="username" *ngIf="router.url !== '/' && username.length > 2">
+    <p>
+      Hello&nbsp;:&nbsp;
+      <strong>{{username}}</strong>
+    </p>
+  </div>
+  <div class="hamburger-wrapper mobile-only">
+    <div class="hamburger hamburger--vortex" [ngClass]="mobileMenuOpened ? 'hamburger hamburger--vortex is-active' : 'hamburger hamburger--vortex'" (click)="hamburgerButtonClick()">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
+  </div>
+  <div class="nav" [ngClass]="mobileMenuOpened ? 'nav is-active' : 'nav'" *ngIf="router.url !== '/'">
+    <ul>
+      <li class="hang" [ngClass]="router.url === '/search' ? 'hang is-active' : 'hang'" (click)="navClick()">
+        <a routerLink="/search">Home</a>
+      </li>
+      <li class="hang" [ngClass]="router.url === '/wishlist' ? 'hang is-active' : 'hang'" (click)="navClick()">
+        <a routerLink="/wishlist">Wishlist</a>
+      </li>
+      <li class="hang" [ngClass]="router.url === '/about' ? 'hang is-active' : 'hang'" (click)="navClick()">
+        <a routerLink="/about">About</a>
+      </li>
+      <li class="hang" (click)="exit()">
+        <a  style="color: Red;">Exit</a>
+      </li>
+    </ul>
+  </div>
+</header>

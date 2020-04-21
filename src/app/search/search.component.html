@@ -1,0 +1,38 @@
+<main class="search-page-wrapper">
+  <div class="searchBox">
+    <form class="form">
+      <label for="searchValue" [className]="labelActive ? 'active' : ''">Enter keyword</label>
+      <input
+        type="text"
+        name="username"
+        id="searchValue"
+        autocomplete="off"
+        [(ngModel)]="searchValue"
+        (keyup)="search(searchValue)"
+        (focus)="focusFunction()"
+        (focusout)="focusOutFunction()"
+        [className]="labelActive ? 'active' : ''"
+      >
+      <span class="errors" *ngIf="error">
+      <p>Insert search keyword!</p>
+    </span>
+    </form>
+  </div>
+  <div class="result-list">
+    <p *ngIf="totalItems" class="totalItems"><strong>Total items found&nbsp;:&nbsp;</strong>{{totalItems}}</p>
+    <div class="list">
+      <app-book *ngFor="let book of resultArray;let appBookIndex = index;" [Book]="book"></app-book>
+    </div>
+  </div>
+  <div class="pagination" *ngIf="resultArray.length >= 1">
+    <div class="previous item" (click)="previousPage()">
+      <img src="../assets/icons/left.svg">
+    </div>
+    <div class="current item">
+      <p>Current page&nbsp;:&nbsp;{{(startIndex + 1)}}</p>
+    </div>
+    <div class="next item" (click)="nextPage()">
+      <img style="transform: rotate(180deg)" src="../assets/icons/left.svg">
+    </div>
+  </div>
+</main>

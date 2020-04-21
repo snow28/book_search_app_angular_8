@@ -1,0 +1,10 @@
+<main class="wishlist-page-wrapper">
+  <div class="result-list">
+    <div class="list">
+      <app-book *ngFor="let book of wishlist;let appBookIndex = index;" [Book]="book" [Wishlist]="true"></app-book>
+    </div>
+    <div class="no-items-msg" *ngIf="wishlist === null || wishlist.length <= 0">
+      <p>Wishlist is empty!</p>
+    </div>
+  </div>
+</main>
