@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SearchComponent implements OnInit {
 
-  API_KEY = 'AIzaSyDHFHCZ8ASRTkSHOkyE1Oy6n_OuaJOidXc';
+ 
   MAX_RESULTS = 20;
   startIndex = 0;
   response: any;
